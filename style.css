@@ -1,0 +1,309 @@
+/* ===== 基本設定 ===== */
+:root {
+  --color-text: #111111;
+  --color-bg: #ffffff;
+  --color-border: #111111;
+  --color-muted: #555555;
+  --color-accent: #1a4d8f;
+  --color-accent-bg: #eaf1fb;
+  --font-main: "BIZ UDPGothic", "UD デジタル 教科書体 N-R", "Hiragino Kaku Gothic ProN",
+    "Meiryo", "Yu Gothic", sans-serif;
+  --gap: 1.2rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  color: var(--color-text);
+  background: #f4f4f4;
+  line-height: 1.9;
+}
+
+h1, h2, p, fieldset, legend {
+  margin: 0;
+}
+
+/* ===== ヘッダー ===== */
+.app-header {
+  padding: 1.5rem 1rem 1rem;
+  text-align: center;
+}
+
+.app-header h1 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.app-sub {
+  margin-top: 0.4rem;
+  font-size: 1.1rem;
+  color: var(--color-muted);
+}
+
+/* ===== 設定エリア ===== */
+.app-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem 2.5rem;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  background: #ffffff;
+  border: 2px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.setting-group {
+  border: none;
+  padding: 0;
+}
+
+.setting-group legend {
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 0 0 0.6rem;
+}
+
+.option-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid var(--color-border);
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background: #ffffff;
+  user-select: none;
+  flex: 1 1 auto;
+  justify-content: center;
+  min-width: 6.5rem;
+}
+
+.option input[type="radio"] {
+  width: 1.4rem;
+  height: 1.4rem;
+  accent-color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.option:has(input:checked) {
+  background: var(--color-accent-bg);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.option-row-wrap .option {
+  min-width: 9rem;
+}
+
+/* ===== ボタン ===== */
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.btn {
+  font-family: inherit;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 0.9rem 1.4rem;
+  border-radius: 12px;
+  border: 2px solid var(--color-border);
+  background: #ffffff;
+  color: var(--color-text);
+  cursor: pointer;
+  min-width: 9.5rem;
+  transition: transform 0.05s ease-in-out;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #ffffff;
+}
+
+.status-message {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: var(--color-accent);
+  min-height: 1.6rem;
+  font-weight: 700;
+}
+
+/* ===== プリント本体（画面表示・印刷共通） ===== */
+.worksheet {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  background: #ffffff;
+  border: 2px solid var(--color-border);
+  border-radius: 12px;
+  padding: 2rem 1.6rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.sheet-header {
+  border-bottom: 3px solid var(--color-border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+.sheet-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-align: center;
+}
+
+.sheet-name {
+  margin-top: 1.2rem;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.question-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.question-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  font-size: 1.5rem;
+  padding-bottom: 1.6rem;
+  margin-bottom: 1.6rem;
+  border-bottom: 1px dashed #999999;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.question-item:last-child {
+  border-bottom: none;
+}
+
+.qnum {
+  flex-shrink: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.sentence {
+  flex: 1;
+}
+
+.blank {
+  display: inline-block;
+  min-width: 2.6em;
+  border-bottom: 3px solid var(--color-border);
+  text-align: center;
+  font-weight: 700;
+  padding: 0 0.2em;
+}
+
+.blank.filled {
+  border-bottom-style: solid;
+}
+
+/* ===== 印刷用スタイル ===== */
+@page {
+  size: A4;
+  margin: 15mm;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff;
+  }
+
+  .worksheet {
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    max-width: none;
+    margin: 0;
+  }
+
+  .question-item {
+    border-bottom: 1px dashed #666666;
+  }
+}
+
+/* ===== スマートフォン向け調整 ===== */
+@media (max-width: 480px) {
+  html {
+    font-size: 16px;
+  }
+
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .option {
+    font-size: 1.05rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .btn {
+    font-size: 1.1rem;
+    min-width: 8rem;
+    flex: 1 1 auto;
+  }
+
+  .worksheet {
+    padding: 1.2rem 1rem;
+  }
+
+  .sheet-title {
+    font-size: 1.5rem;
+  }
+
+  .question-item {
+    font-size: 1.2rem;
+  }
+}

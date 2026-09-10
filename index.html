@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国語プリントメーカー（助詞の穴埋め）</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="app-header no-print">
+  <h1>国語プリントメーカー</h1>
+  <p class="app-sub">助詞の穴埋めプリント　つくるくん</p>
+</header>
+
+<main class="app-main no-print">
+  <section class="settings" aria-label="プリントの設定">
+
+    <fieldset class="setting-group">
+      <legend>問題数</legend>
+      <div class="option-row">
+        <label class="option"><input type="radio" name="count" value="10" checked><span>10問</span></label>
+        <label class="option"><input type="radio" name="count" value="20"><span>20問</span></label>
+        <label class="option"><input type="radio" name="count" value="25"><span>25問</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="setting-group">
+      <legend>難易度</legend>
+      <div class="option-row">
+        <label class="option"><input type="radio" name="level" value="easy" checked><span>やさしい</span></label>
+        <label class="option"><input type="radio" name="level" value="normal"><span>ふつう</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="setting-group">
+      <legend>場面</legend>
+      <div class="option-row option-row-wrap">
+        <label class="option"><input type="radio" name="scene" value="school" checked><span>学校生活</span></label>
+        <label class="option"><input type="radio" name="scene" value="home"><span>家庭</span></label>
+        <label class="option"><input type="radio" name="scene" value="shopping"><span>買い物</span></label>
+        <label class="option"><input type="radio" name="scene" value="work"><span>仕事</span></label>
+        <label class="option"><input type="radio" name="scene" value="transport"><span>公共交通機関</span></label>
+        <label class="option"><input type="radio" name="scene" value="friend"><span>友達</span></label>
+      </div>
+    </fieldset>
+
+  </section>
+
+  <section class="button-row" aria-label="操作ボタン">
+    <button id="btnCreate" class="btn btn-primary" type="button">プリントを作る</button>
+    <button id="btnRegenerate" class="btn" type="button" disabled>もう一度作る</button>
+    <button id="btnAnswers" class="btn" type="button" disabled>答えを見る</button>
+    <button id="btnPrint" class="btn" type="button" disabled>印刷する</button>
+  </section>
+
+  <p id="statusMessage" class="status-message" role="status"></p>
+</main>
+
+<section id="worksheet" class="worksheet hidden" aria-label="プリント本体">
+  <div class="sheet-header">
+    <p class="sheet-title">国語　助詞プリント</p>
+    <p class="sheet-name">年　　組　　名前（　　　　　　　　　　）</p>
+  </div>
+  <ul id="questionList" class="question-list"></ul>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
